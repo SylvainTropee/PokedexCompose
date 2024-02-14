@@ -91,6 +91,11 @@ fun PokemonList(
                     pokeType.name == it
                 }
             }
+//            researchPokemon = pokemons.filter { pokemon ->
+//                pokemon.types.filter { pokeType ->
+//                    pokeType.name == it
+//                }.count() > 0
+//            }
         }
         LazyColumn {
             items(researchPokemon) {

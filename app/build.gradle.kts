@@ -52,6 +52,9 @@ android {
 
 dependencies {
 
+    //ajout d'icon en +
+    implementation ("androidx.compose.material:material-icons-extended")
+
     //moshi
     implementation("com.squareup.moshi:moshi:1.14.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")

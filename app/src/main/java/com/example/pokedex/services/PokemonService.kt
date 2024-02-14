@@ -33,7 +33,7 @@ interface PokemonService {
     suspend fun getPokemons(): List<Pokemon>
 
     @GET("pokemon/{id}")
-    suspend fun getPokemonById(@Path("id") id: Long): Pokemon
+    suspend fun getPokemonById(@Path("id") id: Int): Pokemon
 
    @GET("types")
    suspend fun getAllTypes() : List<PokeType>

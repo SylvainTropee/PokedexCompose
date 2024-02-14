@@ -1,5 +1,6 @@
 package com.example.pokedex.vm
 
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -27,6 +28,14 @@ class PokemonViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
            types.value = PokemonService.PokemonApi.retrofitService.getAllTypes()
         }
+    }
+
+    fun getPokemonById(id : Int): MutableState<Pokemon?> {
+        var pokemon = mutableStateOf<Pokemon?>(null)
+        viewModelScope.launch(Dispatchers.IO) {
+            pokemon.value = PokemonService.PokemonApi.retrofitService.getPokemonById(id)
+        }
+        return pokemon
     }
 
 
